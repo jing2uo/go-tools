@@ -47,12 +47,12 @@ func extractFileName(fileURL string) (string, error) {
 
 	// Extract the query parameters
 	params := parsedURL.Query()
-	rf := params.Get("rf")
-	if rf == "" {
+	id := params.Get("id")
+	if id == "" {
 		return "", fmt.Errorf("parameter 'rf' not found in the URL")
 	}
 
-	return rf, nil
+	return id, nil
 }
 
 func downloadWallpaper(bingURL, dirPath string) (string, error) {
